@@ -17,4 +17,7 @@ Thumbs.db
 
 # DVC
 *.dvc
+data/
+data/raw/
 data/processed/
+data/figures/
