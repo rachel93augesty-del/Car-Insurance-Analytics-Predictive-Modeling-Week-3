@@ -3,10 +3,9 @@ name: Python CI
 on:
   push:
     # Trigger on all branches
-    branches: ['*']
+    branches: [ main, task-1, task-2 ]
   pull_request:
-    # Trigger on PRs targeting main
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
