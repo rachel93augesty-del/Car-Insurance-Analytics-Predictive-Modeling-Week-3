@@ -2,9 +2,15 @@ name: Python CI
 
 on:
   push:
-    branches: [ main, task-1 ]
+    branches:
+      - main
+      - task-1
+      - task-2
+      - task-3   # <-- add this
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - task-3   # optional, if you want PR to trigger workflow
 
 jobs:
   build:
