@@ -18,3 +18,4 @@ Thumbs.db
 # DVC
 *.dvc
 data/processed/
+!.dvc
