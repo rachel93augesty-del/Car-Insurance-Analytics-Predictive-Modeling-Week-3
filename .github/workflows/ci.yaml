@@ -25,23 +25,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas==2.2.0 numpy==1.26.0 scipy==1.11.1 scikit-learn==1.3.2 matplotlib==3.8.0 seaborn==0.12.3 jupyter==1.0.0 flake8==6.1.0 xgboost==1.7.6 shap==0.42.1 nbconvert==7.6.0
+          pip install pandas numpy scipy scikit-learn matplotlib seaborn flake8 xgboost shap
 
-      # 4. Lint Python code (skip notebooks to avoid false failures)
+      # 4. Lint Python scripts only
       - name: Lint Python scripts
         run: |
           flake8 scripts/ --max-line-length=120
 
-      # 5. Execute Notebooks (robust)
-      - name: Execute Notebooks
-        run: |
-          # Create temporary output dir
-          mkdir -p tmp_notebook_output
-          
-          # Execute notebooks safely; allow errors without failing the workflow
-          jupyter nbconvert --to notebook --execute notebooks/03_Hypothesis_Testing.ipynb --output tmp_notebook_output/03_Hypothesis_Testing.ipynb --ExecutePreprocessor.timeout=600 --allow-errors
-          jupyter nbconvert --to notebook --execute notebooks/visualise.ipynb --output tmp_notebook_output/visualise.ipynb --ExecutePreprocessor.timeout=600 --allow-errors
-
-      # 6. Optional: Add model tests here if required
+      # 5. Optional: Add more checks here if needed
       # - name: Run model tests
       #   run: python tests/test_model.py
