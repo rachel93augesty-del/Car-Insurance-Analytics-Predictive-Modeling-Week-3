@@ -17,6 +17,7 @@ Thumbs.db
 
 # DVC
 *.dvc
+task-2
 .dvc/
 
 # Ignore processed and figures
@@ -26,3 +27,9 @@ data/figures/
 # Allow raw data to be tracked by DVC
 !data/raw/
 !.dvcignore
+
+data/
+data/raw/
+data/processed/
+data/figures/
+main
