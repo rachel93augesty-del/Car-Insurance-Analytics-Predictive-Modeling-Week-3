@@ -17,4 +17,11 @@ Thumbs.db
 
 # DVC
 *.dvc
+.dvc/
+
+# Ignore processed and figures
 data/processed/
+data/figures/
+
+# Allow DVC-tracked raw data
+!data/dvc_raw/
