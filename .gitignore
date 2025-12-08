@@ -16,11 +16,13 @@ venv/
 Thumbs.db
 
 # DVC
-.dvc/
 *.dvc
-!.dvc/.gitignore  # track .gitignore inside .dvc if exists
+.dvc/
 
-# Data folders (ignore actual data)
-data/raw/
+# Ignore processed and figures
 data/processed/
-data/interim/
+data/figures/
+
+# Allow raw data to be tracked by DVC
+!data/raw/
+!.dvcignore
