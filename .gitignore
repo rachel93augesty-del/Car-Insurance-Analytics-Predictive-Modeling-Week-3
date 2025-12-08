@@ -25,3 +25,4 @@ data/figures/
 
 # Allow DVC-tracked raw data
 !data/dvc_raw/
+!data/dvc_raw/*.dvc
